@@ -6,32 +6,32 @@ app.config(function ($routeProvider) {
         .when('/',
             {
                 controller: 'HomeController',
-                templateUrl: '/app/partials/home.html'
+                templateUrl: 'app/home/home.tpl.html'
             })
         .when('/about',
             {
                 controller: 'AboutController',
-                templateUrl: '/app/partials/about.html'
+                templateUrl: 'app/about/about.tpl.html'
             })
         .when('/contact',
         {
             controller: 'ContactController',
-            templateUrl: '/app/partials/contact.html'
+            templateUrl: 'app/contact/contact.tpl.html'
         })
         .when('/projects',
         {
             controller: 'ProjectController',
-            templateUrl: '/app/partials/project.html'
+            templateUrl: 'app/project/project.tpl.html'
         })
         .when('/admin',
         {
             controller: 'AdminController',
-            templateUrl: '/app/partials/admin.html'
+            templateUrl: 'app/admin/admin.tpl.html'
         })
-        .when('/admin/projects',
+        .when('/admin/manageproject',
         {
             controller: 'ManageProjectController',
-            templateUrl: '/app/partials/manageprojects.html'
+            templateUrl: 'app/admin/manageproject/manageproject.tpl.html'
         })
         .otherwise({ redirectTo: '/' });
 });

@@ -2,9 +2,8 @@
 <html data-ng-app="earthDynamicsApp">
 <head>
     <title>Earth Dynamics</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
-    <link href="css/application.css" rel="stylesheet"/>
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../vendor/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
 </head>
 <body>
  <div class="container">
@@ -32,7 +31,7 @@
                      </a>
                      <ul class="dropdown-menu">
                          <li><a href="#/admin">Admin Home</a></li>
-                         <li><a href="#/admin/projects">Projects</a></li>
+                         <li><a href="#/admin/manageproject">Projects</a></li>
                      </ul>
                  </li>
              </ul>
@@ -45,15 +44,20 @@
      2013 Dan Greene
  </footer>
 <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
-<script src="Scripts/angular.min.js"></script>
-<script src="Scripts/jquery-1.10.2.min.js"></script>
-
-<!-- UI Libs -->
-<script src="Scripts/bootstrap.js"></script>
+<script src="../vendor/angular/angular.min.js"></script>
+<script src="../vendor/jquery/jquery-1.10.2.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- App libs -->
 <script src="app/app.js"></script>
-<script src="app/controllers/controllers.js"></script>
-<script src="app/services/services.js"></script>
+<script src="app/about/about.js"></script>
+<script src="app/admin/admin.js"></script>
+<script src="app/admin/manageproject/manageproject.js"></script>
+<script src="app/contact/contact.js"></script>
+<script src="app/home/home.js"></script>
+<script src="app/project/project.js"></script>
+
+ <!-- Common libs -->
+<script src="common/projectService/projectservice.js"></script>
 </body>
 </html>
