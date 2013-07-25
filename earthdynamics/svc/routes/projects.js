@@ -96,7 +96,7 @@ var populateDB = function() {
             location: {
                 city: 'Coventry',
                 state: 'CT',
-                postalCode: 06238
+                postalCode: '06238'
             },
             description : 'This is project 1.',
             startDate: '1/1/2012',
@@ -107,7 +107,7 @@ var populateDB = function() {
             location: {
                 city: 'Coventry',
                 state: 'CT',
-                postalCode: 06238
+                postalCode: '06238'
             },
             description : 'This is project 2.',
             startDate: '5/1/2012',

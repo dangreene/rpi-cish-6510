@@ -1,0 +1,91 @@
+
+    <div>
+        <h3>{{ project.title }}</h3>
+
+        <form name="form" class="form-horizontal" novalidate>
+            <div class="control-group">
+                <label class="control-label" for="inputId">ID</label>
+                <div class="controls">
+                    <input type="text" id="inputId" name="txtId" placeholder="Project ID"
+                           data-ng-model="project._id" disabled />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputTitle">Title</label>
+
+                <div class="controls">
+                    <input type="text" id="inputTitle" name="inputTitle" placeholder="Project Title"
+                           data-ng-model="project.title"
+                           required/>
+                        <span class="help-inline" ng-show="form.inputTitle.$dirty && form.inputTitle.$error.required">
+                            This field is required.</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDescription">Description</label>
+
+                <div class="controls">
+                    <input type="text" id="inputDescription" name="inputDescription" placeholder="Project Description"
+                           data-ng-model="project.description" required/>
+                        <span class="help-inline" ng-show="form.inputDescription.$dirty && form.inputDescription.$error.required">
+                            This field is required.</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputStartDate">Start Date</label>
+
+                <div class="controls">
+                    <input type="text" id="inputStartDate" name="inputStartDate" placeholder="Project Start Date"
+                           ng-pattern='/^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/(199\d|[2-9]\d{3})$/'
+                           ui-date="{ dateFormat: 'mm/dd/y' }"
+                           data-ng-model="project.startDate" required/>
+                        <span class="help-inline" ng-show="form.inputStartDate.$dirty && form.inputStartDate.$error.required">
+                            This field is required.</span>
+                    <span class="help-inline" ng-show="form.inputStartDate.$error.pattern">Incorrect Format, should be MM/DD/YY!</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputEndDate">End Date</label>
+
+                <div class="controls">
+                    <input type="text" id="inputEndDate" name="inputEndDate" placeholder="Project End Date" data-ng-model="project.endDate"
+                           ng-pattern='/^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/(199\d|[2-9]\d{3})$/'
+                           ui-date="{ dateFormat: 'mm/dd/y' }"/>
+                    <span class="help-inline" ng-show="form.inputEndDate.$error.pattern">Incorrect Format, should be MM/DD/YY!</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputCity">City</label>
+
+                <div class="controls">
+                    <input type="text" id="inputCity" name="inputCity" placeholder="City" data-ng-model="project.location.city" required/>
+                        <span class="help-inline" ng-show="form.inputCity.$dirty && form.inputCity.$error.required">
+                            This field is required.</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputState">State</label>
+
+                <div class="controls">
+                    <input type="text" id="inputState" name="inputState" placeholder="State" data-ng-model="project.location.state" required/>
+                        <span class="help-inline" ng-show="form.inputState.$dirty && form.inputState.$error.required">
+                            This field is required.</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPostalCode">Postal Code</label>
+
+                <div class="controls">
+                    <input type="text" id="inputPostalCode" name="inputPostalCode" placeholder="Postal Code" data-ng-model="project.location.postalCode"
+                           required/>
+                        <span class="help-inline" ng-show="form.inputPostalCode.$dirty && form.inputPostalCode.$error.required">
+                            This field is required.</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button data-ng-click="addUpdateProject(project.title)" data-ng-disabled="form.$invalid">Add Project</button>
+                </div>
+            </div>
+        </form>
+        </div>

@@ -38,6 +38,11 @@ app.config(function ($routeProvider) {
             controller: 'ManageProjectController',
             templateUrl: 'app/admin/manageproject/manageproject.tpl.html'
         })
+        .when('/admin/manageproject/:projectId',
+        {
+            controller: 'ProjectDetailAdminController',
+            templateUrl: 'app/admin/manageproject/projectdetail.tpl.html'
+        })
         .otherwise({ redirectTo: '/' });
 });
 

@@ -13,6 +13,12 @@ app.configure(function () {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
  });
+
+app.all('/projects/:id', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
  
 app.get('/projects', projects.findAll);
 app.get('/projects/:id', projects.findById);
