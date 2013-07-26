@@ -24,11 +24,34 @@
             // Return the promise to the controller
             return promise;
         },
-        updateProject: function (project) {
+        updateProject: function (project, successCallback) {
             var url = 'http://localhost:3000/projects/' + project._id;
-            var promise = $http.put(url, project).then(function (response) {
+            var promise = $http.put(url, project)
+                .success(function(data,status,headers,config) { console.log(status); alert('Project Saved.'); successCallback();})
+                .error(function(status) {console.log('An Error Occurred, Please Try Again.');})
+                .then(function (response) {
                 return response.data;
-            });
+            })
+            return promise;
+        },
+        addProject: function (project, successCallback) {
+            var url = 'http://localhost:3000/projects/';
+            var promise = $http.post(url, project)
+                .success(function(data,status,headers,config) { console.log(status); alert('Project Saved.'); successCallback();})
+                .error(function(status) {console.log('An Error Occurred, Please Try Again.');})
+                .then(function (response) {
+                    return response.data;
+                })
+            return promise;
+        },
+        deleteProject: function (id, successCallback)  {
+            var url = 'http://localhost:3000/projects/' + id;
+            var promise = $http.delete(url)
+                .success(function(data,status,headers,config) { console.log(status); alert('Project Deleted.'); successCallback();})
+                .error(function(status) {console.log('An Error Occurred, Please Try Again.');})
+                .then(function (response) {
+                    return response.data;
+                })
             return promise;
         }
 

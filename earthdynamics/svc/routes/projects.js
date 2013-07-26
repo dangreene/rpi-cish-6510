@@ -39,6 +39,7 @@ exports.findAll = function(req, res) {
  
 exports.addWine = function(req, res) {
     var wine = req.body;
+    delete wine._id;
     console.log('Adding project: ' + JSON.stringify(wine));
     db.collection('projects', function(err, collection) {
         collection.insert(wine, {safe:true}, function(err, result) {
@@ -55,10 +56,12 @@ exports.addWine = function(req, res) {
 exports.updateWine = function(req, res) {
     var id = req.params.id;
     var wine = req.body;
+
+    delete wine._id;
     console.log('Updating project: ' + id);
     console.log(JSON.stringify(wine));
     db.collection('projects', function(err, collection) {
-        collection.update({'_id':new BSON.ObjectID(id)}, wine, {safe:true}, function(err, result) {
+        collection.update({_id: new BSON.ObjectID(id)}, wine, {safe:true}, function(err, result) {
             if (err) {
                 console.log('Error updating project: ' + err);
                 res.send({'error':'An error has occurred'});

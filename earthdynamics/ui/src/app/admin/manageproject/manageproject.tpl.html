@@ -25,10 +25,11 @@
                 <td>{{project.location.city}}</td>
                 <td>{{project.location.state}}</td>
                 <td>{{project.location.postalCode}}</td>
-                <td><button class="btn" ng-click="openAddUpdateModal()">Modify</button></td>
+                <td><button class="btn" ng-click="redirectToModify(project._id)">Modify</button></td>
+                <td><button class="btn" ng-click="deleteProject(project._id)">Delete</button></td>
             </tr>
             </tbody>
         </table>
-        <button class="btn" ng-click="openAddUpdateModal()">Add Project</button>
+        <button class="btn" ng-click="redirectToAdd()">Add Project</button>
     </div>
 </div>
