@@ -13,7 +13,25 @@ app.controller('ProjectController', function ($scope, projectService) {
     init();
 
     function init() {
-        $scope.projectList = projectService.getProjects();
+        $scope.projectList = projectService.getAllProjects();
     }
+
+    $scope.viewProject = function(id) {
+        $scope.activeProject = projectService.getProject(id);
+        $scope.open();
+    }
+
+    $scope.open = function () {
+        $scope.shouldBeOpen = true;
+    };
+
+    $scope.close = function () {
+        $scope.shouldBeOpen = false;
+    };
+
+    $scope.opts = {
+        backdropFade: true,
+        dialogFade:true
+    };
 
 });

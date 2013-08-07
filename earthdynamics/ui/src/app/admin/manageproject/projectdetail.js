@@ -31,5 +31,5 @@ app.controller('ProjectDetailAdminController', function ($scope, projectService,
             projectService.updateProject(project, successCallback);
         }
 
-    } ;
+    }
 });

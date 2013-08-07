@@ -1,7 +1,51 @@
 <div>
     <div class="container">
         <header>
-            <h3>Project</h3>
+            <h3>Projects</h3>
         </header>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Postal Code</th>
+                <th>Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="project in projectList">
+                <td>{{project.title}}</td>
+                <td>{{project.description}}</td>
+                <td>{{project.startDate}}</td>
+                <td>{{project.endDate}}</td>
+                <td>{{project.location.city}}</td>
+                <td>{{project.location.state}}</td>
+                <td>{{project.location.postalCode}}</td>
+                <td><button class="btn" ng-click="viewProject(project._id)">View Project</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div modal="shouldBeOpen" close="close()" options="opts" id="projectModal">
+    <div class="modal-header">
+        <h3>{{activeProject.title}}</h3>
+    </div>
+    <div class="modal-body">
+        <h5>Description</h5>
+        <p>{{activeProject.description}}</p>
+        <h5>Duration</h5>
+        <p>From {{activeProject.startDate}} to {{activeProject.endDate}}</p>
+        <h5>Location</h5>
+        <p>{{activeProject.location.city}}, {{activeProject.location.state}}  {{activeProject.location.postalCode}}</p>
+        <h5>Picture</h5>
+        <img src="{{activeProject.picture}}" class="img-polaroid projectImage"/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning cancel" ng-click="close()">Close</button>
     </div>
 </div>

@@ -85,6 +85,14 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="inputProjectPicture">Project Picture</label>
+
+                <div class="controls">
+                    <input type="text" id="inputProjectPicture" name="inputProjectPicture" placeholder="Project Picture Location"
+                           data-ng-model="project.picture"/>
+                </div>
+            </div>
+            <div class="control-group">
                 <div class="controls">
                     <button data-ng-click="addUpdateProject(project)" data-ng-disabled="form.$invalid">Save
                     </button>

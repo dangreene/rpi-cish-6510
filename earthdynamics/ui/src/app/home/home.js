@@ -17,16 +17,15 @@ app.controller('HomeController', function ($scope) {
     function initCarousel() {
         $scope.myInterval = 5000;
         var slides = $scope.slides = [];
-        $scope.addSlide = function() {
-            var newWidth = 800 + ((slides.length + (25 * slides.length)) % 150);
+        $scope.addSlide = function(fileName, title, text) {
             slides.push({
-                image: 'http://placekitten.com/' + newWidth + '/600',
-                text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-                    ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+                image: 'images/carousel/' + fileName,
+                title: title,
+                text: text
             });
         };
-        for (var i=0; i<4; i++) {
-            $scope.addSlide();
-        }
+        $scope.addSlide('1.jpg', 'Project 1', 'This was project 1')
+        $scope.addSlide('2.jpg', 'Project 2', 'This was project 2')
+        $scope.addSlide('3.jpg', 'Project 3', 'This was project 3')
     }
 });

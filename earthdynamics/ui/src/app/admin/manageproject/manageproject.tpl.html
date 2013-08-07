@@ -3,7 +3,7 @@
         <header>
             <h3>Site Administration > Project Management</h3>
         </header>
-        <table class="table table-striped">
+        <table class="table table-bordered table-striped">
             <caption>Current Projects</caption>
             <thead>
             <tr>
@@ -14,6 +14,8 @@
                 <th>City</th>
                 <th>State</th>
                 <th>Postal Code</th>
+                <th>Project Picture</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +27,7 @@
                 <td>{{project.location.city}}</td>
                 <td>{{project.location.state}}</td>
                 <td>{{project.location.postalCode}}</td>
+                <td>{{project.picture}}</td>
                 <td><button class="btn" ng-click="redirectToModify(project._id)">Modify</button></td>
                 <td><button class="btn" ng-click="deleteProject(project._id)">Delete</button></td>
             </tr>
