@@ -37,12 +37,12 @@ exports.findAll = function(req, res) {
     });
 };
  
-exports.addWine = function(req, res) {
-    var wine = req.body;
-    delete wine._id;
-    console.log('Adding project: ' + JSON.stringify(wine));
+exports.addProject = function(req, res) {
+    var project = req.body;
+    delete project._id;
+    console.log('Adding project: ' + JSON.stringify(project));
     db.collection('projects', function(err, collection) {
-        collection.insert(wine, {safe:true}, function(err, result) {
+        collection.insert(project, {safe:true}, function(err, result) {
             if (err) {
                 res.send({'error':'An error has occurred'});
             } else {
@@ -53,27 +53,27 @@ exports.addWine = function(req, res) {
     });
 }
  
-exports.updateWine = function(req, res) {
+exports.updateProject = function(req, res) {
     var id = req.params.id;
-    var wine = req.body;
+    var project = req.body;
 
-    delete wine._id;
+    delete project._id;
     console.log('Updating project: ' + id);
-    console.log(JSON.stringify(wine));
+    console.log(JSON.stringify(project));
     db.collection('projects', function(err, collection) {
-        collection.update({_id: new BSON.ObjectID(id)}, wine, {safe:true}, function(err, result) {
+        collection.update({_id: new BSON.ObjectID(id)}, project, {safe:true}, function(err, result) {
             if (err) {
                 console.log('Error updating project: ' + err);
                 res.send({'error':'An error has occurred'});
             } else {
                 console.log('' + result + ' document(s) updated');
-                res.send(wine);
+                res.send(project);
             }
         });
     });
 }
  
-exports.deleteWine = function(req, res) {
+exports.deleteProject = function(req, res) {
     var id = req.params.id;
     console.log('Deleting project: ' + id);
     db.collection('projects', function(err, collection) {
