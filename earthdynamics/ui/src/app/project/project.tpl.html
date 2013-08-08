@@ -48,7 +48,7 @@
         <h5>Location</h5>
         <p>{{activeProject.location.city}}, {{activeProject.location.state}}  {{activeProject.location.postalCode}}</p>
         <h5>Picture</h5>
-        <img src="{{activeProject.picture}}" class="img-polaroid projectImage"/>
+        <img data-ng-src="{{activeProject.picture}}" class="img-polaroid projectImage"/>
     </div>
     <div class="modal-footer">
         <button class="btn btn-warning cancel" ng-click="close()">Close</button>

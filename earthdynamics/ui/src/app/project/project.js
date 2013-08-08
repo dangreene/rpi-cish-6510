@@ -9,6 +9,7 @@
 app.controller('ProjectController', function ($scope, projectService, $routeParams) {
 
     $scope.projectList = [];
+    $scope.activeProject = {};
 
     init();
 
@@ -18,7 +19,16 @@ app.controller('ProjectController', function ($scope, projectService, $routePara
     }
 
     $scope.viewProject = function(id) {
-        $scope.activeProject = projectService.getProject(id);
+
+        projectService.getProject(id).then(function( val ) {
+            if (!val.picture)
+            {
+                val.picture = "images/misc/nophoto.jpg";
+            }
+            //debugger;
+            $scope.activeProject = val;
+        });
+
         $scope.open();
     }
 
