@@ -1,6 +1,6 @@
 {
-    "name": "wine-cellar",
-    "description": "Wine Cellar Application",
+    "name": "earth-dynamics-svc",
+    "description": "Earth Dynamics Web Service Application",
     "version": "0.0.1",
     "private": true,
     "dependencies": {

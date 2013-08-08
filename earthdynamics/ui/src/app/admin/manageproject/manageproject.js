@@ -13,6 +13,14 @@ app.controller('ManageProjectController', function ($scope, $location, projectSe
     initProjectList();
 
     function initProjectList() {
+        clippy.load('Merlin', function(agent) {
+            // Do anything with the loaded agent
+            agent.show();
+            agent.speak("It looks like you're trying to add a project. Would you like help with that?");
+            //agent.hide();
+            setTimeout(function() {agent.hide();},5000);
+        });
+
         $scope.projectList = projectService.getAllProjects();
     }
 
