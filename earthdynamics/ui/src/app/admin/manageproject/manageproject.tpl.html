@@ -15,6 +15,7 @@
                 <th>State</th>
                 <th>Postal Code</th>
                 <th>Project Picture</th>
+                <th>Completed?</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -28,6 +29,7 @@
                 <td>{{project.location.state}}</td>
                 <td>{{project.location.postalCode}}</td>
                 <td>{{project.picture}}</td>
+                <td>{{project.completed}}</td>
                 <td><button class="btn" ng-click="redirectToModify(project._id)">Modify</button></td>
                 <td><button class="btn" ng-click="deleteProject(project._id)">Delete</button></td>
             </tr>

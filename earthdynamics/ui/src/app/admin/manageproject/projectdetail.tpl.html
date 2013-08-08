@@ -93,6 +93,14 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="inputProjectCompleted">Completed?</label>
+
+                <div class="controls">
+                    <input type="checkbox" id="inputProjectCompleted" name="inputProjectPicture" placeholder="Project Picture Location"
+                           data-ng-model="project.completed" checked="false"/>
+                </div>
+            </div>
+            <div class="control-group">
                 <div class="controls">
                     <button data-ng-click="addUpdateProject(project)" data-ng-disabled="form.$invalid">Save
                     </button>

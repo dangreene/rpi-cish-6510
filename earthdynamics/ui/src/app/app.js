@@ -23,7 +23,7 @@ app.config(function ($routeProvider) {
             controller: 'ContactController',
             templateUrl: 'app/contact/contact.tpl.html'
         })
-        .when('/projects',
+        .when('/projects/:completed',
         {
             controller: 'ProjectController',
             templateUrl: 'app/project/project.tpl.html'

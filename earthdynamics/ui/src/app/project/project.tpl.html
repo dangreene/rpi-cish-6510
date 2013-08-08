@@ -3,6 +3,11 @@
         <header>
             <h3>Projects</h3>
         </header>
+        <div class="span2">
+            Search: <input data-ng-model="query">
+            <br/>
+            <br/>
+        </div>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -17,7 +22,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="project in projectList">
+            <tr ng-repeat="project in projectList | filter:{completed:projectFilter} | filter: query">
                 <td>{{project.title}}</td>
                 <td>{{project.description}}</td>
                 <td>{{project.startDate}}</td>

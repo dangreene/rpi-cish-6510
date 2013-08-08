@@ -6,13 +6,14 @@
  * To change this template use File | Settings | File Templates.
  */
 
-app.controller('ProjectController', function ($scope, projectService) {
+app.controller('ProjectController', function ($scope, projectService, $routeParams) {
 
     $scope.projectList = [];
 
     init();
 
     function init() {
+        $scope.projectFilter = $routeParams.completed;
         $scope.projectList = projectService.getAllProjects();
     }
 

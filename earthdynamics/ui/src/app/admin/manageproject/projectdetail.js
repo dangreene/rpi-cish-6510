@@ -24,6 +24,9 @@ app.controller('ProjectDetailAdminController', function ($scope, projectService,
     }
 
     $scope.addUpdateProject = function(project) {
+        if (project.completed === undefined) {
+            project.completed = false;
+        }
         var successCallback = function() { $location.path( "/admin/manageproject/"  ) } ;
         if (project._id === 0) {
             projectService.addProject(project, successCallback);
